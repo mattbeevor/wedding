@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+.spacer{
+  height:6em
+}
+
+.splashimage{
+	position: fixed;
+    width: 100%;
+	height: 100%;
+    background-image: url('assets/orchid.jpg');
+    background-size: cover;
+}
+.overlay{
+  position: absolute;
+  top: 25px;
+  text-align: center;
+  color: white;
+}
+
+.script{
+    font-family: 'Dancing Script', cursive;
+}

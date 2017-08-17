@@ -1,0 +1,27 @@
+.navbar-brand{
+    font-family:'Exo', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    margin-top: -5px !important
+
+}
+
+.title{
+        font-family: 'Dancing Script', cursive;
+
+}
+
+.nav-link{
+font-family: 'Amatic SC', cursive;
+font-size: 2em;
+
+}
+
+.whitetext{
+    color:white;
+}
+
+.blacktext{
+    color:black
+}
+

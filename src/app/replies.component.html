@@ -1,0 +1,103 @@
+
+<div *ngIf="admin">
+  <div class="container">
+    <div data-toggle="buttons">
+      <div>
+        <input type="checkbox"  [(ngModel)]="sortBy.date"> Most recent
+      </div>
+      <div>
+        <input type="checkbox"  [(ngModel)]="sortBy.lastname"> Last Name A-Z
+      </div>
+      <div>
+        <input type="checkbox"  [(ngModel)]="sortBy.coming"> Hide not attending
+      </div>
+      <div>
+        <input type="checkbox"  [(ngModel)]="sortBy.notcoming"> Hide attending
+      </div>
+      <div>
+        <input type="checkbox" [(ngModel)]="sortBy.music"> Show Music
+      </div>
+      <div>
+        <input type="checkbox"  [(ngModel)]="sortBy.diet"> Show Diet
+      </div>
+    </div>
+  </div>
+
+
+  <div class="spacer2"></div>
+
+<div class=container-fluid>
+<table class="table table-compact">
+    <tr >
+      <td  ><h4>Date</h4></td>
+      <td><h4>Name</h4></td>
+      <td><h4>Attending</h4></td>
+      <td><h4>Music</h4></td>
+      <td><h4>Diet</h4></td>
+      <td><h4>Email</h4></td>
+      <td><h4>Message</h4></td>
+    </tr>
+    <tr *ngFor="let x of items | async | sort:sortBy "  >
+      <td [class.success]="x.attending" >{{ x.date }}</td>
+      <td>
+        
+      <div *ngIf="x.firstname.a">
+        {{x.firstname.a}} {{x.lastname.a}}
+      </div>
+      <div *ngIf="x.firstname.b">
+        {{x.firstname.b}} {{x.lastname.b}}
+      </div>
+      <div *ngIf="x.firstname.c">
+        {{x.firstname.c}} {{x.lastname.c}}
+      </div>
+      <div *ngIf="x.firstname.d">
+        {{x.firstname.d}} {{x.lastname.d}}
+      </div>
+      <div *ngIf="x.firstname.e">
+        {{x.firstname.e}} {{x.lastname.e}}
+      </div>
+      <div *ngIf="x.firstname.f">
+        {{x.firstname.f}} {{x.lastname.f}}
+      </div>
+      <div *ngIf="x.firstname.g">
+        {{x.firstname.g}} {{x.lastname.g}}
+      </div>
+      <div *ngIf="x.firstname.h">
+        {{x.firstname.h}} {{x.lastname.h}}
+      </div>
+      <div *ngIf="x.firstname.i">
+        {{x.firstname.i}} {{x.lastname.i}}
+      </div>
+      <div *ngIf="x.firstname.j">
+        {{x.firstname.j}} {{x.lastname.j}}
+      </div>
+      <div *ngIf="x.firstname.k">
+        {{x.firstname.k}} {{x.lastname.k}}
+      </div>
+
+
+      </td>
+      <td>{{ x.answer }}</td>
+      <td>{{ x.music }}</td>
+      <td>{{ x.diet }}</td>
+      <td>{{ x.email }}</td>
+      <td>{{ x.message }}</td>
+    </tr>
+</table>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div *ngIf="!admin">
+    <p >You are currently signed in as a guest</p>
+</div>

@@ -1,0 +1,18 @@
+#message{
+  overflow: visible;
+  height: auto;
+}
+
+.container{
+  max-width:30em;
+  text-align: center;
+
+}
+
+.spacer{
+  height:6em
+}
+
+.narrow{
+  width:40%
+}
