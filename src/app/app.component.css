@@ -1,4 +1,12 @@
-
+.container{
+  text-align: center;
+  position:absolute;
+  top:50px;
+  width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.1em;
+}
 
 .title{
   font-family: 'Josefin Sans', sans-serif;
@@ -9,8 +17,12 @@
 .nav-link{
   font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
-    font-size: 1.4em;
+    font-size: 1.1em;
 
+}
+
+.nav-item{
+    text-align: center
 }
 
 .whitetext{
@@ -21,3 +33,51 @@
     color:black
 }
 
+#navbarContent{
+    background-color: white
+}
+
+
+@media all and (min-width: 768px) {
+
+.splashimage{
+background-color:white;
+ height:115vh;
+     background-image: url("../assets/laurel.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+    background-size: contain;
+}
+
+.bgspace{
+    height:0px;
+}
+
+}
+
+@media all and (max-width: 767px) and (min-width: 0px) {
+
+#navbarContent{
+    background-color: white;
+    height:100vh;
+    width:95vw;
+}
+
+
+.splashimage{
+
+    width: 100vw;
+    height:100vh;
+    background-image: url("../assets/laurel.jpg");
+	background-repeat:no-repeat;
+	background-position: top center;
+     background-size:100% auto;
+}
+
+
+.bgspace{
+    height:60px;
+}
+
+
+}

@@ -7,6 +7,12 @@
   left: 0px;
 }
 
+.container{
+  text-align: center;
+  position:absolute;
+  top:50px;
+  width: 100%
+}
 
 .svg{
    position:absolute;
@@ -29,31 +35,86 @@
   border-radius: 0.25em;
 }
 
+
+@media all and (min-width: 768px) {
+
+
+.spacer{
+  height: 1em;
+}
 .headline{
   color: #242424;
   font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
-
-  font-size: 5em;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  font-size: 3.5em;
+  letter-spacing: 0.12em;
+  max-width:100%;
 }
 
 .tagline{
   font-family: 'Josefin Sans', sans-serif;
       font-weight: 300;
 
-    font-size: 4em;
+    font-size: 2em;
 }
 
+}
+
+@media all and (max-width: 767px) and (min-width: 000px) {
+.headline{
+  color: #242424;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size:2em;
+  letter-spacing: 0.12em;
+  max-width:100%;
+}
+
+
+.spacer{
+  height: 1em;
+}
+
+.tagline{
+  font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+
+    font-size: 1em;
+}
+
+
+}
+
+
+.hiddentext{
+  color: rgba(1,1,1,0)
+}
+
+
+
+.containsheadline{
+    text-align: center;
+max-width:100%;
+}
 
 .para{
   font-family: 'Josefin Sans', sans-serif;
     color: #444444;
     font-size: 3em;
-      font-weight: 300;
-
+    font-weight: 300;
 }
 
-.spacer{
-  height: 3em;
+
+
+
+@media all and (min-width: 768px) {
+.centreimage{
+  height: 300px;
+}
+}
+
+@media all and (max-width: 767px) and (min-width: 0px) {
+.centreimage{
+width: 90vw;
+}
 }

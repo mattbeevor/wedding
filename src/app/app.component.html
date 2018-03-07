@@ -1,6 +1,9 @@
 
-<div  *ngIf="authorised" class="splashimage">
-</div>
+
+  <router-outlet *ngIf="authorised"></router-outlet>
+
+
+
 
 <link href="https://fonts.googleapis.com/css?family=Exo:400,800i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
@@ -8,7 +11,8 @@
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Dancing+Script" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,300" rel="stylesheet">
 
-<div class="modal-dialog"  *ngIf="!authorised">
+<div class="container"  *ngIf="!authorised">
+<div class="modal-dialog" >
   <div class="loginmodal-container">
     <h1 class="title">Please enter your password:</h1><br>
     <form class="form-signin" (submit)="loginWithEmail($event,password.value)">
@@ -24,8 +28,10 @@
     This is not the password! Please check your invitation.
   </div>
 </div>
+</div>
 
 <nav *ngIf="authorised" class={{navclass}}>
+
   <button type="button" class="navbar-toggler navbar-toggler-right" (click)="isExpanded = !isExpanded" [attr.aria-expanded]="!isExpanded" aria-controls="navbarContent">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,16 +44,22 @@
         <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/rsvp" routerLinkActive="active">RSVP</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/ontheday" routerLinkActive="active">On the day</a>
+        <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/whereandwhen" routerLinkActive="active">Where and When</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/food" routerLinkActive="active">Food</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/gettinghere" routerLinkActive="active">Getting Here</a>
+        <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/transport" routerLinkActive="active">Transport and Accomodation</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/information" routerLinkActive="active">information</a>
+        <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/information" routerLinkActive="active">More information</a>
       </li>
-      <li *ngIf="admin" class="nav-item">
-        <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/replies" routerLinkActive="active">Replies</a>
+      <li class="nav-item">
+        <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/bbq" routerLinkActive="active">Sunday BBQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="isExpanded = !isExpanded"  routerLink="/giftlist" routerLinkActive="active">Gift List</a>
       </li>
     </ul>
     <ul class="navbar-nav navbar-right">
@@ -56,7 +68,9 @@
   </div>
 </nav>
 
-<router-outlet *ngIf="authorised"></router-outlet>
+<div class="bgspace"></div>
+<div class="splashimage">
 
+</div>
 
 

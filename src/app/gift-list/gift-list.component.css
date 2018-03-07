@@ -1,0 +1,42 @@
+.spacer{
+  height:2em
+}
+
+.container{
+  text-align: center;
+  position:absolute;
+  top:50px;
+  width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: black;
+}
+
+.text{
+    background-color: rgba(255,255,255,0.5);
+    max-width:30em;
+      margin: 0 auto;
+
+}
+
+
+.incontainer{
+  max-width:40em;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+
+@media all and (min-width: 768px) {
+.centreimage{
+  height: 300px;
+}
+}
+
+@media all and (max-width: 767px) and (min-width: 0px) {
+.centreimage{
+width: 90vw;
+}
+}

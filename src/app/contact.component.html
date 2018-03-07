@@ -1,124 +1,22 @@
 
 
 <div class="container">
-  <div>
-    <h3  class="script">RSVP</h3>
-    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-      <p> Will you be attending? </p>
+    <div class="spacer"></div>
 
-      <div class="form-group" [(ngModel)]="model.answer" ngbRadioGroup name="radioBasic">
-        <label ngbButtonLabel class="btn-success">
-          <input ngbButton type="radio" [value]="true"> Yes
-        </label>
-        <label ngbButtonLabel class="btn-warning">
-          <input ngbButton type="radio" [value]="false"> No
-        </label>
+  <div class="formobject">
+    <div class="title">Please RSVP by 31st May 2018</div>
+    <p></p>
+
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm" action="https://formspree.io/lucyharry18@gmail.com"
+      method="POST">
+
+      <div class="form-group" >
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               [(ngModel)]="model.name" name="name">
       </div>
 
-      <div class="form-group">
-        <label for="firstname">How many are in your group?</label>
-        <input min="1" max="11"  type="number" class="form-control" id="number"
-               [(ngModel)]="model.number" name="number">
-      </div>
-
-
-      <div class="input-group">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.a name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.a" name="lastname1">
-      </div>
-
-      <div class="input-group" *ngIf="model.number>1">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.b name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.b" name="lastname1">
-      </div>
-
-            <div class="input-group" *ngIf="model.number>2">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.c name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.c" name="lastname1">
-      </div>
-
-            <div class="input-group" *ngIf="model.number>3">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.d name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.d" name="lastname1">
-      </div>
-
-            <div class="input-group" *ngIf="model.number>4">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.e name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.e" name="lastname1">
-      </div>
-
-            <div class="input-group" *ngIf="model.number>5">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.f name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.f" name="lastname1">
-      </div>
-
-            <div class="input-group" *ngIf="model.number>6">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.g name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.g" name="lastname1">
-      </div>
-
-            <div class="input-group" *ngIf="model.number>7">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.h name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.h" name="lastname1">
-      </div>
-
-            <div class="input-group" *ngIf="model.number>8">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.i name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.i" name="lastname1">
-      </div>
-
-                  <div class="input-group" *ngIf="model.number>9">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.j name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.j" name="lastname1">
-      </div>
-
-                  <div class="input-group" *ngIf="model.number>10">
-        <input placeholder="First Name" type="text" class="form-control narrow" id="firstname1"
-        [(ngModel)]=model.firstname.k name="firstname1">
-        <span ></span>
-        <input placeholder="Last Name" type="text" class="form-control narrow" id="lastname1"
-        [(ngModel)]="model.lastname.k" name="lastname1">
-      </div>
-
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea type="text" class="form-control" id="message"
-               [(ngModel)]="model.message" name="message"></textarea>
-      </div>
-
-
-      <div class="form-group" *ngIf="model.answer">
+      <div class="form-group" >
         <label for="email">Email</label>
         <input type="text" class="form-control" id="email"
                [(ngModel)]="model.email" name="email">
@@ -126,21 +24,32 @@
 
 
 
-      <div class="form-group" *ngIf="model.answer">
-        <label for="diet">Special dietary requirements?</label>
-        <input type="text" class="form-control" id="diet"
-               [(ngModel)]="model.diet" name="diet">
-      </div>
 
-      <div class="form-group" *ngIf="model.answer">
-        <label for="music">Do you have any suggestions for music?</label>
-        <input type="text" class="form-control" id="music"
-               [(ngModel)]="model.music" name="music">
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea placeholder="Please include:&#10;&#10;&#8226; Whether or not you can attend.&#10;&#10;&#8226; Your choice of main course, you can choose a single option or a combination.&#10;&#10;&#8226; Any dietary requirements or allergies, including vegetarian.&#10;&#10;&#8226; A song you’ll get up and dance to.&#10;&#10;" type="text" class="form-control message" 
+               [(ngModel)]="model.message" name="message"></textarea>
       </div>
 
 
-      <button type="submit" class={{submitbuttonstyle}} >{{submit}}</button>
+
+      <p class={{fvis}}>Message failed to send, please retry or contact us directly<p>
+      <button type="submit"  value="Send" class={{submitbuttonstyle}} >{{submit}}</button>
+      <p class={{svis}}>Thank you, message sent<p>
+      
     </form>
+        <div class="spacer" ></div>
+        <div class="spacer" ></div>
+
   </div>
 
-  <div class="spacer"> </div>  <div class="spacer"> </div>  <div class="spacer"> </div>
+ 
+
+<div>
+
+
+</div>
+
+</div>
+

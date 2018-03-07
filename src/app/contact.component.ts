@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
-import {Observable} from 'rxjs/Observable';
-import {Namelist} from "./namelist"
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'contact-component',
@@ -14,46 +9,51 @@ import {Namelist} from "./namelist"
 export class ContactComponent {
   title = 'app';
 
-  user: Observable<firebase.User>;
-  items: FirebaseListObservable<any[]>;
   submit="Submit"
   submitbuttonstyle="btn btn-secondary"
+  failmessage="fail"
+  successmessage="success"
+  svis="invisible"
+  fvis="invisible"
 
-  constructor(public afAuth: AngularFireAuth, public af: AngularFireDatabase) {
-    this.items = af.list('/messages', {
-      query: {
-        limitToLast: 50
-      }
-    });
 
-    this.user = this.afAuth.authState;
+  constructor(private http: HttpClient){
+  }
+
+
+
+  model = {name:"", email:"", message:""};
+
+
+
+  post(mod){
 
   }
 
-  login() {
-    this.afAuth.auth.signInAnonymously();
-  }
-
-  logout() {
-      this.afAuth.auth.signOut();
-  }
-
-  Send(desc: Object) {
-      this.items.push(desc);
-  }
-
-  today = new Date();
-  date= this.today.getHours()+':'+(this.today.getMinutes()+1)+'-'+this.today.getDate()+'-'+(this.today.getMonth()+1)+'-'+this.today.getFullYear();
-  sortdate= this.today.getTime()	
-
-  model = {number: 1, firstname:{a:"",b:"",c:"",d:"",e:"",f:"",g:"",h:"",i:"",j:"",k:""},lastname:{a:"",b:"",c:"",d:"",e:"",f:"",g:"",h:"",i:"",j:"",k:""},email:"",answer:undefined,message:"",diet:"",music:"",date: this.date, sortdate: this.sortdate};
 
   onSubmit() {
-    this.Send(this.model)
-    this.model={number: 1, firstname:{a:"",b:"",c:"",d:"",e:"",f:"",g:"",h:"",i:"",j:"",k:""},lastname:{a:"",b:"",c:"",d:"",e:"",f:"",g:"",h:"",i:"",j:"",k:""},email:"",answer:undefined,message:"",diet:"",music:"",date:this.date,sortdate:this.sortdate}
-    this.submit="THANK YOU!"
-    this.submitbuttonstyle="btn btn-success"
+    console.log(this.model)
+
+    let mod={Response:this.model.name+", "+this.model.email+", "+this.model.message}
+    console.log(mod)
+        this.http.post('https://formspree.io/lucyharry18@gmail.com', (mod)).subscribe(
+          res => {
+            console.log("success")
+                this.submitbuttonstyle="btn btn-success"
+                this.svis="visible"
+                this.submit="Submitted"
+                console.log(this.submit)
+                this.model = {name:"", email:"", message:""};
+          },
+          err => {
+                console.log("failure")
+                this.fvis="danger"
+                this.submit="Error!"
+                this.submitbuttonstyle="btn btn-danger"}
+    )
   }
 
+
+      
 
 }

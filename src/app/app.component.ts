@@ -14,10 +14,8 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  collapsed="navbar noshadow navbar-toggleable-sm navbar-light";
-  uncollapsed="navbar noshadow  navbar-toggleable-sm transparent navbar-light";
 
-  navclass=this.uncollapsed;
+  navclass="navbar noshadow navbar-toggleable-sm  navbar-light";
   title = 'app';
   user: Observable<firebase.User>;
   items: FirebaseListObservable<any[]>;
@@ -37,7 +35,6 @@ export class AppComponent {
    this.afAuth.authState.subscribe(
         (auth) => {
           if (auth != null) {
-            console.log(auth.uid);
             this.authorised=true
             if (auth.email != "harry2018lucy@gmail.com") {
               this.admin=true
@@ -45,18 +42,15 @@ export class AppComponent {
           }
       });
     this.users = db.list('users');
-    console.log(this.users)
   }
 
 
   loginWithEmail(event, password){
-    console.log(password)
     event.preventDefault();
-    this.afAuth.auth.signInWithEmailAndPassword(password+"@gmail.com", password)
+    this.afAuth.auth.signInWithEmailAndPassword("harry2018lucy@gmail.com", password)
       .catch((error: any) => {
         if (error) {
           this.error = error;
-          console.log(this.error);
         }
       });
   }

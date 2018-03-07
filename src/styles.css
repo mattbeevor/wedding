@@ -1,19 +1,18 @@
 .spacer{
-  height:6em
+  height:3em;
+  width:5em;
 }
 
-.splashimage{
-	position: fixed;
-    width: 100%;
-	height: 100%;
-    background-image: url('https://raw.githubusercontent.com/mattbeevor/wedding/master/src/assets/laurel.jpg');
-    background-size: cover;
-}
+
 .overlay{
   position: absolute;
-  top: 25px;
+  top: 80px;
   text-align: center;
-  color: white;
+}
+
+.container{
+  position:absolute;
+  top:50px;
 }
 
 .script{
